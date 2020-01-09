@@ -1,0 +1,30 @@
+steps:
+  # Build container image
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/$PROJECT_ID/todo-backend-client",
+        ".",
+      ]
+  # Push to Container Registry
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/$PROJECT_ID/todo-backend-client"]
+  # Deploy to Cloud Run
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      [
+        "run",
+        "deploy",
+        "todo-backend-client",
+        "--image",
+        "gcr.io/$PROJECT_ID/todo-backend-client",
+        "--region",
+        "europe-west1",
+        "--platform",
+        "managed",
+        "--allow-unauthenticated",
+      ]
+images:
+  - gcr.io/$PROJECT_ID/todo-backend-client
