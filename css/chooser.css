@@ -1,5 +1,6 @@
 #api-root {
-  font: 20px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 20px/1.5 "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-weight: 100;
   margin: 2em 0;
   position: relative;
@@ -18,7 +19,7 @@
   top: -25px;
   left: 10px;
   padding: 0 8px;
-	background: #eaeaea url('../bower_components/todomvc-common/bg.png');
+  background: #eaeaea;
 }
 
 #api-root input {
@@ -37,15 +38,15 @@
   float: right;
 
   padding: 0.2em 0.6em;
-  background-color: rgb(48, 173, 48); 
+  background-color: rgb(48, 173, 48);
   color: white;
 
   -webkit-box-shadow: 2px 2px 1px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    2px 2px 1px rgba(50, 50, 50, 0.75);
-  box-shadow:         2px 2px 1px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 2px 2px 1px rgba(50, 50, 50, 0.75);
+  box-shadow: 2px 2px 1px rgba(50, 50, 50, 0.75);
 }
 #api-root button:hover {
-  background-color: rgb(8, 123, 8); 
+  background-color: rgb(8, 123, 8);
 }
 
 #target-info {
@@ -54,8 +55,9 @@
   right: 0;
   left: 0;
   opacity: 0.6;
-  
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  font-family: "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-size: 1.2em;
   font-weight: 100;
   padding: 1em 2em;
@@ -83,5 +85,3 @@
   font-style: italic;
   font-weight: 200;
 }
-
-

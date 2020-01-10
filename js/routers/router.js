@@ -1,23 +1,22 @@
-/*global Backbone */
-var app = app || {};
+import Backbone from "backbone";
 
-(function () {
-	'use strict';
+// Todo Router
+// ----------
+module.exports = Backbone.Router.extend({
+  routes: {
+    "*filter": "setFilter"
+  },
 
-	// Todo Router
-	// ----------
-	app.TodoRouter = Backbone.Router.extend({
-		routes: {
-			'*filter': 'setFilter'
-		},
+  initialize: function({ app }) {
+    this.app = app;
+  },
 
-		setFilter: function (param) {
-			// Set the current filter to be used
-			app.TodoFilter = param || '';
+  setFilter: function(param) {
+    // Set the current filter to be used
+    this.app.TodoFilter = param || "";
 
-			// Trigger a collection filter event, causing hiding/unhiding
-			// of Todo view items
-			app.todos.trigger('filter');
-		}
-	});
-})();
+    // Trigger a collection filter event, causing hiding/unhiding
+    // of Todo view items
+    this.app.todos.trigger("filter");
+  }
+});
