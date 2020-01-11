@@ -1,5 +1,5 @@
 import Backbone from "backbone";
-import Todo from "../models/todo";
+import Todo from "./todo";
 
 module.exports = Backbone.Collection.extend({
   // Reference to this collection's model.

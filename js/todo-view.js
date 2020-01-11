@@ -2,7 +2,7 @@ import Backbone from "backbone";
 import $ from "jquery";
 Backbone.$ = $;
 import _ from "underscore";
-import { ESC_KEY, ENTER_KEY } from "../const";
+import { ESC_KEY, ENTER_KEY } from "./constants";
 
 // Todo Item View
 // --------------

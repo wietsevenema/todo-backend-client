@@ -1,9 +1,9 @@
 import $ from "jquery";
 import Backbone from "backbone";
-import { ENTER_KEY } from "./const";
-import Todos from "./collections/todos";
-import TodoRouter from "./routers/router";
-import AppView from "./views/app-view";
+import { ENTER_KEY } from "./constants";
+import Todos from "./todos";
+import TodoRouter from "./router";
+import AppView from "./app-view";
 
 (function() {
   function loadApiRootFromInput() {

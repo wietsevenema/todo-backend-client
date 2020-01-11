@@ -1,10 +1,10 @@
 import Backbone from "backbone";
 import $ from "jquery";
 import _ from "underscore";
-import TodoView from "../views/todo-view";
+import TodoView from "./todo-view";
 Backbone.$ = $;
 
-import { ENTER_KEY } from "../const";
+import { ENTER_KEY } from "./constants";
 // The Application
 // ---------------
 
