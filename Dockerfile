@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 
 RUN npm install
-RUN npm run-script build
+RUN npx parcel build index.html --no-source-maps
 
 FROM nginx:stable
 
