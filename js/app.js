@@ -7,7 +7,7 @@ import AppView from "./app-view";
 
 (function() {
   function loadApiRootFromInput() {
-    var apiRoot = $("#api-root input").val();
+    let apiRoot = $("#api-root input").val();
     window.location.search = apiRoot;
   }
 
@@ -20,13 +20,20 @@ import AppView from "./app-view";
 })();
 
 (function() {
-  var app = {};
+  let app = {};
 
-  var apiRootUrl = window.location.search.substr(1);
+  let apiRootUrl = window.location.search.substr(1).trim();
+
   if (!apiRootUrl) {
     $("body > *").hide();
     $("#api-root").show();
     return;
+  }
+  if (apiRootUrl.endsWith("/")) {
+    apiRootUrl = apiRootUrl.substr(
+      0,
+      apiRootUrl.length - 1
+    );
   }
   $("#api-root").hide();
 

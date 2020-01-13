@@ -17,7 +17,7 @@ module.exports = Backbone.Model.extend({
     if (this.isNew()) {
       return this.collection.url;
     } else {
-      return this.get("url");
+      return this.collection.url + this.get("url");
     }
   },
 
