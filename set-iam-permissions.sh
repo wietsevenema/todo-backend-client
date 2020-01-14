@@ -11,6 +11,12 @@ gcloud projects add-iam-policy-binding \
   --member serviceAccount:$BUILD_SA \
   --role roles/run.admin 
 
+# Allow Cloud Build to find Cloud SQL instances
+gcloud projects add-iam-policy-binding \
+  $PROJECT_ID \
+  --member serviceAccount:$BUILD_SA \
+  --role roles/cloudsql.viewer
+
 # Allow Cloud Build to use the Compute Engine default service account. 
 gcloud iam service-accounts add-iam-policy-binding $COMPUTE_SA \
   --member serviceAccount:$BUILD_SA \
