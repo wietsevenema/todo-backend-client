@@ -1,16 +1,16 @@
-# First stage: BUILD
+## First stage: BUILD
 FROM node:stretch AS build
 WORKDIR /app
 
-# Copy everything from the context
-COPY . .
-
-# Install dependencies
+# Copy package.json and install dependencies
+COPY package*.json ./
 RUN npm install 
-# Run bundler
+
+# Copy source files and run bundler
+COPY . . 
 RUN npx parcel build index.html --no-source-maps
 
-# Second stage: RUN
+## Second stage: RUN
 FROM nginx:stable
 
 # Add NGINX config with dynamic $PORT
