@@ -14,7 +14,7 @@ steps:
     args: [
         "run", "deploy", "todo-backend-client",
         "--image", "gcr.io/$PROJECT_ID/todo-backend-client",
-        "--region","europe-west1",
+        "--region","us-central1",
         "--platform", "managed",
         "--allow-unauthenticated",
     ]
